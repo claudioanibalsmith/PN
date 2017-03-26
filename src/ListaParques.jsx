@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Page, Toolbar,ToolbarButton,Icon,List,ListItem,Row,Col} from 'react-onsenui';
 import {notification} from 'onsenui';
-
 import RaisedButton from 'material-ui/RaisedButton';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';

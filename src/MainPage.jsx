@@ -61,8 +61,8 @@ export default class MainPage extends React.Component {
     </Page>
     </SplitterSide>
     <SplitterContent>
-    <Page>
-    <Toolbar modifier="noshadow">
+    <Page key="pageHome">
+    <Toolbar modifier="noshadow" style={{backgroundColor: '#ffcc00'}}>
     <div className="left">
     <ToolbarButton onClick={this.show.bind(this)}>
     <Icon icon="md-menu"></Icon>
