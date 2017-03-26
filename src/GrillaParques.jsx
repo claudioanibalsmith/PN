@@ -1,9 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {Page, Toolbar,ToolbarButton,Icon,List,ListItem,Row,Col} from 'react-onsenui';
-import {notification} from 'onsenui';
-
-import RaisedButton from 'material-ui/RaisedButton';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
@@ -11,9 +6,8 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import ShowDetail from './ShowDetail';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-export default class ListaParques extends React.Component {
-
- constructor(props) {
+export default class GrillaParques extends React.Component {
+  constructor(props) {
     super(props);
     this.tilesData = [
     {
@@ -85,6 +79,6 @@ export default class ListaParques extends React.Component {
       </Page>
       );
   }
-
 }
+
 

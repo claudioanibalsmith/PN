@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Page, Button, Splitter,SplitterSide,SplitterContent, Toolbar,ToolbarButton,Tab,Tabbar,Icon,List,ListItem } from 'react-onsenui';
 
 import SecondPage from './SecondPage'
+import ListaParques from './ListaParques'
 
 export default class MainPage extends React.Component {
 
@@ -17,12 +18,9 @@ export default class MainPage extends React.Component {
   }
 
 
-  pushPage(navigator) {
-    this.navigator.pushPage({
-        hasBackButton: true
-    });
-
-    index++;
+  pushPage(componentPage) {
+    this.state.isOpen = false;
+    this.props.navigator.pushPage({component: componentPage});
   }
 
 
@@ -54,17 +52,16 @@ export default class MainPage extends React.Component {
     onClose={this.hide.bind(this)}
     onOpen={this.show.bind(this)}
     >
-    <Page key="pageList">
-    <List
-    dataSource={['Inicio', 'Parques', 'Contacto']} 
-    renderRow={(title) => (
-      <ListItem key={title} onClick={this.pushPage.bind(this)} tappable>{title}</ListItem>
-      )}
-    />
+    <Page>
+    <List>
+    <ListItem onClick={this.pushPage.bind(this,SecondPage)} tappable>Inicio</ListItem>
+    <ListItem onClick={this.pushPage.bind(this,ListaParques)} tappable>Parques</ListItem>
+    <ListItem onClick={this.pushPage.bind(this,SecondPage)} tappable>Contacto</ListItem>
+    </List>
     </Page>
     </SplitterSide>
     <SplitterContent>
-    <Page key="pageHome">
+    <Page>
     <Toolbar modifier="noshadow">
     <div className="left">
     <ToolbarButton onClick={this.show.bind(this)}>

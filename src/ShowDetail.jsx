@@ -1,10 +1,30 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Page} from 'react-onsenui';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-const ShowDetail = () => (
-  <Card>
+export default class ShowDetail extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+  pushPage(componentPage) {
+    this.props.navigator.pushPage({component: componentPage});
+  }
+
+  popPage() {
+    this.props.navigator.popPage();
+  }
+
+
+  render() {
+    return (
+    <Page>
+      <MuiThemeProvider>
+    <Card>
     <CardMedia
       overlay={<CardTitle title="El Calafate" subtitle="Argentina" />} style={{height:200}}>
       <img src="images/calafate.jpg" style={{height:200}}/>
@@ -19,6 +39,10 @@ const ShowDetail = () => (
       <FlatButton label="Historia" />
     </CardActions>
   </Card>
-);
+   </MuiThemeProvider>
+      </Page>
+    );
+  }
+}
 
-export default ShowDetail;
+
